@@ -55,4 +55,10 @@
 **2. Re-ordering setters for sell in and quality** <br>
 ![Tests 9](img/09.png)
 
+**3. Replacing Item Strings by Constants to avoid frequent typos** <br>
+![Test 10](img/10.png)
+
+**4. Refactor nested item quality checks with functions** <br>
+![Test 11](img/11.png)
+
 

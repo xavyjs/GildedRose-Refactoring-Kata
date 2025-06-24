@@ -14,10 +14,19 @@ from item import Item
         maintenance
 """
 
-# Item types
+# Item Strings
 AGED_BRIE = "Aged Brie"
 BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert"
 SULFURAS = "Sulfuras, Hand of Ragnaros"
+
+# helper to decrease quality
+def decrease_item_quality(item: Item, amount: int = 1) -> None:
+    item.quality = max(item.quality - amount, 0)
+
+# helper to increase quality
+def increase_item_quality(item: Item, amount: int = 1, max_quality: int = 50) -> None:
+    item.quality = min(item.quality + amount, max_quality)
+
 
 def update_quality(items: Iterable[Item]):
     for item in items:
@@ -30,27 +39,21 @@ def update_quality_single(item: Item):
         item.name != AGED_BRIE
         and item.name != BACKSTAGE_PASSES
     ):
-        if item.quality > 0:
-            if item.name != SULFURAS:
-                item.quality = item.quality - 1
+        if item.name != SULFURAS:
+            decrease_item_quality(item)
     else:
-        if item.quality < 50:
-            item.quality = item.quality + 1
-            if item.name == BACKSTAGE_PASSES:
-                if item.sell_in < 10:
-                    if item.quality < 50:
-                        item.quality = item.quality + 1
-                if item.sell_in < 5:
-                    if item.quality < 50:
-                        item.quality = item.quality + 1
+         increase_item_quality(item)
+         if item.name == BACKSTAGE_PASSES:
+            if item.sell_in < 10:
+                increase_item_quality(item)
+            if item.sell_in < 5:
+                increase_item_quality(item)
     if item.sell_in < 0:
         if item.name != AGED_BRIE:
             if item.name != BACKSTAGE_PASSES:
-                if item.quality > 0:
-                    if item.name != SULFURAS:
-                        item.quality = item.quality - 1
+                if item.name != SULFURAS:
+                    decrease_item_quality(item)
             else:
-                item.quality = item.quality - item.quality
+                item.quality = 0
         else:
-            if item.quality < 50:
-                item.quality = item.quality + 1
+            increase_item_quality(item)
