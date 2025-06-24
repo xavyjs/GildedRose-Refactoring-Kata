@@ -61,4 +61,7 @@
 **4. Refactor nested item quality checks with functions** <br>
 ![Test 11](img/11.png)
 
+**5. Increase readability of conditionals with inversion of condition**
+![Test 12](img/12.png)
+
 
