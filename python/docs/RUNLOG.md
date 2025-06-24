@@ -47,4 +47,12 @@
 
 ![Test for backstage](img/07.png)
 
+## 7. Refactoring gilded_rose
+
+**1. Seperating loops and iter instance** <br>
+![Tests 7](img/08.png)
+
+**2. Re-ordering setters for sell in and quality** <br>
+![Tests 9](img/09.png)
+
 

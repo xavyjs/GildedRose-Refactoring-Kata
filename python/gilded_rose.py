@@ -19,6 +19,8 @@ def update_quality(items: Iterable[Item]):
         update_quality_single(item)
 
 def update_quality_single(item: Item):
+    if item.name != "Sulfuras, Hand of Ragnaros":
+        item.sell_in = item.sell_in - 1
     if (
         item.name != "Aged Brie"
         and item.name != "Backstage passes to a TAFKAL80ETC concert"
@@ -30,14 +32,12 @@ def update_quality_single(item: Item):
         if item.quality < 50:
             item.quality = item.quality + 1
             if item.name == "Backstage passes to a TAFKAL80ETC concert":
-                if item.sell_in < 11:
+                if item.sell_in < 10:
                     if item.quality < 50:
                         item.quality = item.quality + 1
-                if item.sell_in < 6:
+                if item.sell_in < 5:
                     if item.quality < 50:
                         item.quality = item.quality + 1
-    if item.name != "Sulfuras, Hand of Ragnaros":
-        item.sell_in = item.sell_in - 1
     if item.sell_in < 0:
         if item.name != "Aged Brie":
             if item.name != "Backstage passes to a TAFKAL80ETC concert":
