@@ -78,4 +78,9 @@
 ![Test 15](img/15.png)
 **Test Failed** <br>
 
+## 9. Feat: Add support for conjured item type
+**Introduce necessary constants and ConjuredUpdater to decrease twice as faster** <br>
+![Test 16](img/16.png)
+**Test Passes!**
+
 

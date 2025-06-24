@@ -16,6 +16,7 @@ def increase_item_quality(item: Item, amount: int = 1, max_quality: int = 50) ->
 AGED_BRIE = "Aged Brie"
 BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert"
 SULFURAS = "Sulfuras, Hand of Ragnaros"
+CONJURED = "Conjured Mana Cake"
 
 
 
@@ -60,11 +61,17 @@ class SulfurasItemUpdater(DefaultItemUpdater):
     def update_quality(self, item: Item) -> None:
         pass
 
+class ConjuredItemUpdater(DefaultItemUpdater):
+    def update_quality(self, item: Item) -> None:
+        decrease_item_quality(item, 2)
+        if item.sell_in < 0:
+            decrease_item_quality(item, 2)
 
 ITEM_UPDATERS = {
     AGED_BRIE: AgedBrieItemUpdater(),
     BACKSTAGE_PASSES: BackstagePassesItemUpdater(),
-    SULFURAS: SulfurasItemUpdater()
+    SULFURAS: SulfurasItemUpdater(),
+    CONJURED: ConjuredItemUpdater()
 }
 
 
