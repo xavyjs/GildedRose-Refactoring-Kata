@@ -67,4 +67,10 @@
 **6. Simplify conditionals by collapsing logic** <br>
 ![Test 13](img/13.png)
 
+**7. Abstractions to simplify and seperate concerns to ease the introduction of new item types** <br>
+1. Introduce ItemUpdater abstraction via Protocol
+2. Define DefaultItemUpdater behaviors
+3. For every item type inherit DefaultItemUpdater and override behaviors according to the SRS 
+![Test 14](img/14.png)
+
 
