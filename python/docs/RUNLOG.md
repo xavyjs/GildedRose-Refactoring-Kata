@@ -32,3 +32,10 @@
 
 ![Tests after refactoring ](img/05.png)
 
+## 5. Adding Tests for straight forward cases
+**1. Aged Brie** <br>
+**2. Sulfuras** 
+
+![Test for straight forward cases](img/06.png)
+
+
