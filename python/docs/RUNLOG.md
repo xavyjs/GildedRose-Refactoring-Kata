@@ -73,4 +73,9 @@
 3. For every item type inherit DefaultItemUpdater and override behaviors according to the SRS 
 ![Test 14](img/14.png)
 
+## 8. Test for conjured
+**Add test case for conjured** <br>
+![Test 15](img/15.png)
+**Test Failed** <br>
+
 
