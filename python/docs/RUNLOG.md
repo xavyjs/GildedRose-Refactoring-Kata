@@ -81,6 +81,21 @@
 ## 9. Feat: Add support for conjured item type
 **Introduce necessary constants and ConjuredUpdater to decrease twice as faster** <br>
 ![Test 16](img/16.png)
-**Test Passes!**
+**Test Passes!**<br>
+
+## 10. Refactor(gilded_rose): Decompose into independent modules for easier maintenance
+1. config.py - contains item string definitions, MIN and MAX values for QUALITY
+2. quality_operation - moved the functions for quality increase and decrease into a seperate module
+3. item_updater.py - contains ItemUpdater abstract, DefaultItemUpdater definition, Overrided behaviors of DefaultItemUpdater for every item type
+4. gilded_rose.py - glues 1 to 3 
+   
+![Test 17](img/17.png)
+**Test Passes post refactoring into seperate modules!**<br>
+
+
+# TO INTRODUCE NEW ITEM TYPES (like conjured)
+1. Add the item types string in config.py
+2. In item_updater.py, Add the behavior for the new item type by overriding the default behaviors from DefaultItemUpdater
+3. Update the new item type in gilded_rose.py
 
 
