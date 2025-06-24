@@ -38,4 +38,13 @@
 
 ![Test for straight forward cases](img/06.png)
 
+## 6. Adding Tests for backstage
+
+**1. Increase in Quality w.r.t SellIn** <br>
+**2. Quality +2 when days leq 10** <br>
+**3. Quality +3 when days leq 5** <br>
+**4. Quality drops to 0 post concert**
+
+![Test for backstage](img/07.png)
+
 
