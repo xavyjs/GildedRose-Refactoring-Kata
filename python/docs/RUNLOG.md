@@ -23,3 +23,12 @@
 **6. Check Item Quality degrade after SellIn**
 
 ![Tests for Finer Constraints](img/04.png)
+
+## 4. Major refactor of glided_rose and test_glided_rose
+**1.Refactor GlidedRose Class to python function as the Class only has behavior and data is not native(instantied by a different class i.e. Item)** <br>
+**2. Move Item class to a seperate .py file for easier maintenance** <br>
+**3. Adding Type Hints for better readability on 1 and 2** <br>
+**4. Refactor test_glided_rose to adapt to changes from 1 to 3**
+
+![Tests after refactoring ](img/05.png)
+
